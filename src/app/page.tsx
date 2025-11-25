@@ -2,7 +2,7 @@ import Image from "next/image";
 import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from "@clerk/nextjs";
 import prisma from "@/lib/prisma";
 import CreatePost from "@/components/CreatePost";
-
+import WhoToFollow from "@/components/WhoToFollow";
 
 export default async function Home() {
   
@@ -12,7 +12,7 @@ export default async function Home() {
         <CreatePost/>
       </div>
       <div className ="hidden lg:block lg:col-span-4 sticky top-20">
-       {/* <WhoToFollow/> */}
+       <WhoToFollow/>
       </div>
     </div>
   );
