@@ -8,6 +8,7 @@ import { getPosts } from "@/actions/post.action";
 import { getDbUserId } from "@/actions/syncUser";
 import PostCard from "@/components/PostCard";
 
+
 export default async function Home() {
   const user = await currentUser();
   const posts = await getPosts();
