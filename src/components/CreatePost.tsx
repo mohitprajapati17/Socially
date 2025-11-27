@@ -12,6 +12,7 @@ import {Textarea} from "@/components/ui/textarea"
 
 import {Button} from "@/components/ui/button"
 import {ImageIcon,Loader2Icon,SendIcon} from "lucide-react"
+import ImageUpload from "./ImageUpload"
  function CreatePost() {
     const {user } = useUser()
     const [content , setContent]=useState("")
@@ -57,6 +58,18 @@ import {ImageIcon,Loader2Icon,SendIcon} from "lucide-react"
               disabled={isPosting}
             />
           </div>
+          {(showImageUpload || imageUrl) && (
+            <div className="border rounded-lg p-4">
+              <ImageUpload
+                endpoint="postImage"
+                value={imageUrl}
+                onChange={(url) => {
+                  setImageUrl(url);
+                  if (!url) setShowImageUpload(false);
+                }}
+              /> 
+            </div>
+          )}
 
           
 
